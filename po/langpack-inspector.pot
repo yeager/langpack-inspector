@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Daniel Nylander
+# This file is distributed under the same license as the langpack-inspector package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: langpack-inspector 0.1.0\n"
+"Report-Msgid-Bugs-To: daniel@danielnylander.se\n"
+"POT-Creation-Date: 2026-02-14 09:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/langpack_inspector/main.py:58 src/langpack_inspector/window.py:31
+msgid "Language Pack Inspector"
+msgstr ""
+
+#: src/langpack_inspector/window.py:54
+msgid "About"
+msgstr ""
+
+#: src/langpack_inspector/window.py:55
+msgid "Quit"
+msgstr ""
+
+#: src/langpack_inspector/window.py:61
+msgid "Refresh"
+msgstr ""
+
+#: src/langpack_inspector/window.py:77
+msgid "Language:"
+msgstr ""
+
+#: src/langpack_inspector/window.py:87
+msgid "Scan"
+msgstr ""
+
+#: src/langpack_inspector/window.py:101
+msgid "Installed Language Packs"
+msgstr ""
+
+#: src/langpack_inspector/window.py:127
+msgid "Filter domains…"
+msgstr ""
+
+#: src/langpack_inspector/window.py:162
+msgid "Scanning…"
+msgstr ""
+
+#: src/langpack_inspector/window.py:183
+#, python-format
+msgid "No language packs found for '%s'"
+msgstr ""
+
+#: src/langpack_inspector/window.py:188
+#, python-brace-format
+msgid ""
+"Language: {lang} — {translated}/{total} strings translated ({pct:.1f}%) — "
+"{files} .mo files — {outdated} outdated"
+msgstr ""
+
+#: src/langpack_inspector/window.py:222
+#, python-brace-format
+msgid "{translated}/{total} ({pct:.0f}%)"
+msgstr ""
+
+#: src/langpack_inspector/window.py:249
+msgid "old"
+msgstr ""
+
+#: src/langpack_inspector/window.py:257
+msgid "Translate"
+msgstr ""

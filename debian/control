@@ -1,0 +1,24 @@
+Source: langpack-inspector
+Section: utils
+Priority: optional
+Maintainer: Daniel Nylander <daniel@danielnylander.se>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools
+Standards-Version: 4.6.2
+Homepage: https://github.com/yeager/langpack-inspector
+Rules-Requires-Root: no
+
+Package: langpack-inspector
+Architecture: all
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         python3-gi,
+         gir1.2-gtk-4.0,
+         gir1.2-adw-1,
+         python3-gi-cairo
+Description: Inspect Ubuntu language packs and find missing translations
+ A GTK4/Adwaita application that shows what is included in Ubuntu language
+ packs, helps find missing or outdated translations, and provides direct
+ links to Launchpad for translating.

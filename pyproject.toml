@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langpack-inspector"
+version = "0.1.0"
+description = "GTK4/Adwaita app to inspect Ubuntu language packs and find missing translations"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+requires-python = ">=3.10"
+authors = [
+    {name = "Daniel Nylander", email = "daniel@danielnylander.se"},
+]
+keywords = ["gtk4", "adwaita", "translation", "language-pack", "ubuntu", "i18n"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: GTK",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Localization",
+]
+dependencies = [
+    "PyGObject>=3.42",
+]
+
+[project.urls]
+Homepage = "https://github.com/yeager/langpack-inspector"
+"Bug Tracker" = "https://github.com/yeager/langpack-inspector/issues"
+
+[project.gui-scripts]
+langpack-inspector = "langpack_inspector.main:main"
+
+[project.scripts]
+langpack-inspector = "langpack_inspector.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
