@@ -56,7 +56,7 @@ class LangpackInspectorApp(Adw.Application):
     def _on_about(self, action, param):
         about = Adw.AboutDialog(
             application_name=_("Language Pack Inspector"),
-            application_icon="applications-other",
+            application_icon="langpack-inspector",
             developer_name="Daniel Nylander",
             version=__version__,
             developers=["Daniel Nylander <daniel@danielnylander.se>"],
@@ -64,6 +64,8 @@ class LangpackInspectorApp(Adw.Application):
             license_type=Gtk.License.GPL_3_0,
             website="https://github.com/yeager/langpack-inspector",
             issue_url="https://github.com/yeager/langpack-inspector/issues",
+            comments=_("A localization tool by Daniel Nylander"),
+            translator_credits=_("Translate this app: https://app.transifex.com/linguaedit/langpack-inspector/"),
         )
         about.present(self.props.active_window)
 
