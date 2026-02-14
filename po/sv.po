@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Daniel Nylander
+# This file is distributed under the same license as the langpack-inspector package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Daniel Nylander <po@danielnylander.se>, 2026
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: langpack-inspector 0.1.0\n"
+"Report-Msgid-Bugs-To: daniel@danielnylander.se\n"
+"POT-Creation-Date: 2026-02-14 09:48+0100\n"
+"PO-Revision-Date: 2026-02-14 09:50+0000\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
+"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304766/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/langpack_inspector/main.py:58 src/langpack_inspector/window.py:31
+msgid "Language Pack Inspector"
+msgstr "Inspektera språkpaket"
+
+#: src/langpack_inspector/window.py:54
+msgid "About"
+msgstr "Om"
+
+#: src/langpack_inspector/window.py:55
+msgid "Quit"
+msgstr "Avsluta"
+
+#: src/langpack_inspector/window.py:61
+msgid "Refresh"
+msgstr "Uppdatera"
+
+#: src/langpack_inspector/window.py:77
+msgid "Language:"
+msgstr "Språk:"
+
+#: src/langpack_inspector/window.py:87
+msgid "Scan"
+msgstr "Sök igenom"
+
+#: src/langpack_inspector/window.py:101
+msgid "Installed Language Packs"
+msgstr "Installerade språkpaket"
+
+#: src/langpack_inspector/window.py:127
+msgid "Filter domains…"
+msgstr "Filtrera domäner..."
+
+#: src/langpack_inspector/window.py:162
+msgid "Scanning…"
+msgstr "Söker igenom..."
+
+#: src/langpack_inspector/window.py:183
+#, python-format
+msgid "No language packs found for '%s'"
+msgstr "Inga språkpaket hittades för '%s'"
+
+#: src/langpack_inspector/window.py:188
+#, python-brace-format
+msgid ""
+"Language: {lang} — {translated}/{total} strings translated ({pct:.1f}%) — "
+"{files} .mo files — {outdated} outdated"
+msgstr ""
+"Språk: {lang} — {translated}/{total} strängar översatta ({pct:.1f}%) — "
+"{files} .mo-filer — {outdated} utdaterade"
+
+#: src/langpack_inspector/window.py:222
+#, python-brace-format
+msgid "{translated}/{total} ({pct:.0f}%)"
+msgstr "{translated}/{total} ({pct:.0f}%)"
+
+#: src/langpack_inspector/window.py:249
+msgid "old"
+msgstr "gammal"
+
+#: src/langpack_inspector/window.py:257
+msgid "Translate"
+msgstr "Översätt"
+
+#: desktop file
+msgid "Inspect language pack contents and coverage"
+msgstr "Inspektera språkpaketens innehåll och täckning"
+
+#: desktop file
+msgid "translation;l10n;langpack;inspector;"
+msgstr "översättning;l10n;språkpaket;inspektera;"
