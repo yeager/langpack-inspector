@@ -1,7 +1,7 @@
 [main]
 host = https://app.transifex.com
 
-[o:yeager:p:langpack-inspector:r:langpack-inspector-pot]
+[o:linguaedit:p:langpack-inspector:r:langpack-inspector-pot]
 file_filter = po/<lang>.po
 source_file = po/langpack-inspector.pot
 source_lang = en
