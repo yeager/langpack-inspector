@@ -51,7 +51,7 @@ sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 python3-gi-cairo
 
 This project uses gettext for i18n. All user-visible strings are wrapped with `_()`.
 
-Translation is managed via [Transifex](https://app.transifex.com/yeager/langpack-inspector/).
+Translation is managed via [Transifex](https://app.transifex.com/danielnylander/langpack-inspector/).
 
 To generate the POT file:
 
