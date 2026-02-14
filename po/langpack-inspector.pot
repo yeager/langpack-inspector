@@ -77,3 +77,11 @@ msgstr ""
 #: src/langpack_inspector/window.py:257
 msgid "Translate"
 msgstr ""
+
+#: desktop file
+msgid "Inspect language pack contents and coverage"
+msgstr ""
+
+#: desktop file
+msgid "translation;l10n;langpack;inspector;"
+msgstr ""
