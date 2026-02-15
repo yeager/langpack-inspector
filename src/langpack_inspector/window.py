@@ -10,7 +10,7 @@ import gettext
 import gi
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, Adw, Gio, GLib, Pango
+from gi.repository import Gtk, Adw, Gio, GLib, Pango, Gdk
 
 from langpack_inspector.backend import (
     get_system_language,
@@ -23,6 +23,28 @@ from langpack_inspector.backend import (
 _ = gettext.gettext
 
 
+def _setup_heatmap_css():
+    css = b"""
+    .heatmap-green { background-color: #26a269; color: white; border-radius: 8px; }
+    .heatmap-yellow { background-color: #e5a50a; color: white; border-radius: 8px; }
+    .heatmap-orange { background-color: #ff7800; color: white; border-radius: 8px; }
+    .heatmap-red { background-color: #c01c28; color: white; border-radius: 8px; }
+    .heatmap-gray { background-color: #77767b; color: white; border-radius: 8px; }
+    """
+    provider = Gtk.CssProvider()
+    provider.load_from_data(css)
+    Gtk.StyleContext.add_provider_for_display(
+        Gdk.Display.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+
+def _heatmap_css_class(pct):
+    if pct >= 90: return "heatmap-green"
+    elif pct >= 70: return "heatmap-yellow"
+    elif pct >= 50: return "heatmap-orange"
+    elif pct > 0: return "heatmap-red"
+    return "heatmap-gray"
+
+
 class LangpackInspectorWindow(Adw.ApplicationWindow):
     """Main window."""
 
@@ -33,7 +55,9 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
 
         self._mo_files: list[MoFileInfo] = []
         self._current_lang = get_system_language()
+        self._heatmap_mode = False
 
+        _setup_heatmap_css()
         self._build_ui()
         GLib.idle_add(self._initial_scan)
 
@@ -47,6 +71,12 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         # Header bar
         header = Adw.HeaderBar()
         toolbar_view.add_top_bar(header)
+
+        # Heatmap toggle
+        self._heatmap_btn = Gtk.ToggleButton(icon_name="view-grid-symbolic")
+        self._heatmap_btn.set_tooltip_text(_("Toggle heatmap view"))
+        self._heatmap_btn.connect("toggled", self._on_heatmap_toggled)
+        header.pack_start(self._heatmap_btn)
 
         # About button
         menu_btn = Gtk.MenuButton(icon_name="open-menu-symbolic")
@@ -109,9 +139,13 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         # Separator
         content_box.append(Gtk.Separator())
 
+        # View stack for list/heatmap
+        self._view_stack = Gtk.Stack()
+        self._view_stack.set_vexpand(True)
+        content_box.append(self._view_stack)
+
         # Scrolled list of .mo files
         sw = Gtk.ScrolledWindow(vexpand=True)
-        content_box.append(sw)
 
         self._listbox = Gtk.ListBox()
         self._listbox.set_selection_mode(Gtk.SelectionMode.NONE)
@@ -121,6 +155,23 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         self._listbox.set_margin_top(6)
         self._listbox.set_margin_bottom(12)
         sw.set_child(self._listbox)
+        self._view_stack.add_named(sw, "list")
+
+        # Heatmap view
+        hm_sw = Gtk.ScrolledWindow(vexpand=True)
+        self._heatmap_flow = Gtk.FlowBox()
+        self._heatmap_flow.set_selection_mode(Gtk.SelectionMode.NONE)
+        self._heatmap_flow.set_homogeneous(True)
+        self._heatmap_flow.set_min_children_per_line(4)
+        self._heatmap_flow.set_max_children_per_line(10)
+        self._heatmap_flow.set_column_spacing(4)
+        self._heatmap_flow.set_row_spacing(4)
+        self._heatmap_flow.set_margin_start(12)
+        self._heatmap_flow.set_margin_end(12)
+        self._heatmap_flow.set_margin_top(8)
+        self._heatmap_flow.set_margin_bottom(12)
+        hm_sw.set_child(self._heatmap_flow)
+        self._view_stack.add_named(hm_sw, "heatmap")
 
         # Search/filter
         self._search_entry = Gtk.SearchEntry()
@@ -150,12 +201,21 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         if self._current_lang:
             self._start_scan()
 
+    def _on_heatmap_toggled(self, btn):
+        self._heatmap_mode = btn.get_active()
+        if self._heatmap_mode:
+            self._rebuild_heatmap(self._mo_files)
+            self._view_stack.set_visible_child_name("heatmap")
+        else:
+            self._view_stack.set_visible_child_name("list")
+
     def _on_filter_changed(self, entry):
         query = entry.get_text().lower()
-        self._populate_list(
-            [m for m in self._mo_files if query in m.domain.lower()]
-            if query else self._mo_files
-        )
+        filtered = ([m for m in self._mo_files if query in m.domain.lower()]
+                    if query else self._mo_files)
+        self._populate_list(filtered)
+        if self._heatmap_mode:
+            self._rebuild_heatmap(filtered)
 
     def _start_scan(self):
         self._spinner.start()
@@ -197,7 +257,36 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         )
 
         self._populate_list(mo_files)
+        if self._heatmap_mode:
+            self._rebuild_heatmap(mo_files)
         return False
+
+    def _rebuild_heatmap(self, mo_files: list[MoFileInfo]):
+        while True:
+            child = self._heatmap_flow.get_first_child()
+            if child is None:
+                break
+            self._heatmap_flow.remove(child)
+        for mo in mo_files:
+            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2)
+            box.set_size_request(120, 56)
+            box.add_css_class(_heatmap_css_class(mo.coverage_pct))
+            box.set_margin_start(3)
+            box.set_margin_end(3)
+            box.set_margin_top(3)
+            box.set_margin_bottom(3)
+            lbl = Gtk.Label(label=mo.domain)
+            lbl.set_ellipsize(Pango.EllipsizeMode.END)
+            lbl.set_max_width_chars(16)
+            lbl.set_margin_top(4)
+            lbl.set_margin_start(4)
+            lbl.set_margin_end(4)
+            box.append(lbl)
+            pct_lbl = Gtk.Label(label=f"{mo.coverage_pct:.0f}%")
+            pct_lbl.set_margin_bottom(4)
+            box.append(pct_lbl)
+            box.set_tooltip_text(f"{mo.domain}: {mo.translated}/{mo.total}")
+            self._heatmap_flow.append(box)
 
     def _populate_list(self, mo_files: list[MoFileInfo]):
         # Clear
