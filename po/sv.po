@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: langpack-inspector 0.1.0\n"
+"Project-Id-Version: langpack-inspector\n"
 "Report-Msgid-Bugs-To: daniel@danielnylander.se\n"
-"POT-Creation-Date: 2026-02-14 09:48+0100\n"
+"POT-Creation-Date: 2026-02-14 20:01+0100\n"
 "PO-Revision-Date: 2026-02-14 09:50+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304766/sv/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/langpack_inspector/main.py:58 src/langpack_inspector/window.py:31
+#: src/langpack_inspector/window.py:31 src/langpack_inspector/main.py:58
 msgid "Language Pack Inspector"
 msgstr "Inspektera språkpaket"
 
@@ -51,11 +51,11 @@ msgstr "Installerade språkpaket"
 
 #: src/langpack_inspector/window.py:127
 msgid "Filter domains…"
-msgstr "Filtrera domäner..."
+msgstr "Filtrera domäner…"
 
 #: src/langpack_inspector/window.py:162
 msgid "Scanning…"
-msgstr "Söker igenom..."
+msgstr "Söker igenom…"
 
 #: src/langpack_inspector/window.py:183
 #, python-format
@@ -84,10 +84,14 @@ msgstr "gammal"
 msgid "Translate"
 msgstr "Översätt"
 
-#: desktop file
-msgid "Inspect language pack contents and coverage"
-msgstr "Inspektera språkpaketens innehåll och täckning"
+#: src/langpack_inspector/main.py:67
+msgid "A localization tool by Daniel Nylander"
+msgstr "Ett lokalanpassningsverktyg av Daniel Nylander"
 
-#: desktop file
-msgid "translation;l10n;langpack;inspector;"
-msgstr "översättning;l10n;språkpaket;inspektera;"
+#: src/langpack_inspector/main.py:68
+msgid ""
+"Translate this app: https://app.transifex.com/danielnylander/langpack-"
+"inspector/"
+msgstr ""
+"Översätt denna app: https://app.transifex.com/danielnylander/langpack-"
+"inspector/"

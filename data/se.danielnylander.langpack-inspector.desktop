@@ -1,8 +1,7 @@
 [Desktop Entry]
 Name=Language Pack Inspector
-Name[sv]=Språkpaketsinspektör
+Name[sv]=Inspektera språkpaket
 Comment=Inspect language pack contents and coverage
-Comment[sv]=Inspektera installerade Ubuntu-språkpaket
 Exec=langpack-inspector
 Icon=langpack-inspector
 Terminal=false
