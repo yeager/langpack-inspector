@@ -2,67 +2,72 @@
 # Copyright (C) YEAR Daniel Nylander
 # This file is distributed under the same license as the langpack-inspector package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Daniel Nylander <po@danielnylander.se>, 2026
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: langpack-inspector\n"
 "Report-Msgid-Bugs-To: daniel@danielnylander.se\n"
-"POT-Creation-Date: 2026-02-14 20:01+0100\n"
+"POT-Creation-Date: 2026-02-15 10:24+0100\n"
 "PO-Revision-Date: 2026-02-14 09:50+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
-"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304766/sv/)\n"
+"Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/"
+"304766/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/langpack_inspector/window.py:31 src/langpack_inspector/main.py:58
+#: src/langpack_inspector/window.py:53 src/langpack_inspector/main.py:58
 msgid "Language Pack Inspector"
 msgstr "Inspektera språkpaket"
 
-#: src/langpack_inspector/window.py:54
+#: src/langpack_inspector/window.py:77
+msgid "Toggle heatmap view"
+msgstr ""
+
+#: src/langpack_inspector/window.py:84
 msgid "About"
 msgstr "Om"
 
-#: src/langpack_inspector/window.py:55
+#: src/langpack_inspector/window.py:85
 msgid "Quit"
 msgstr "Avsluta"
 
-#: src/langpack_inspector/window.py:61
+#: src/langpack_inspector/window.py:91
 msgid "Refresh"
 msgstr "Uppdatera"
 
-#: src/langpack_inspector/window.py:77
+#: src/langpack_inspector/window.py:107
 msgid "Language:"
 msgstr "Språk:"
 
-#: src/langpack_inspector/window.py:87
+#: src/langpack_inspector/window.py:117
 msgid "Scan"
 msgstr "Sök igenom"
 
-#: src/langpack_inspector/window.py:101
+#: src/langpack_inspector/window.py:131
 msgid "Installed Language Packs"
 msgstr "Installerade språkpaket"
 
-#: src/langpack_inspector/window.py:127
+#: src/langpack_inspector/window.py:178
 msgid "Filter domains…"
 msgstr "Filtrera domäner…"
 
-#: src/langpack_inspector/window.py:162
+#: src/langpack_inspector/window.py:222
 msgid "Scanning…"
 msgstr "Söker igenom…"
 
-#: src/langpack_inspector/window.py:183
+#: src/langpack_inspector/window.py:243
 #, python-format
 msgid "No language packs found for '%s'"
 msgstr "Inga språkpaket hittades för '%s'"
 
-#: src/langpack_inspector/window.py:188
+#: src/langpack_inspector/window.py:248
 #, python-brace-format
 msgid ""
 "Language: {lang} — {translated}/{total} strings translated ({pct:.1f}%) — "
@@ -71,16 +76,16 @@ msgstr ""
 "Språk: {lang} — {translated}/{total} strängar översatta ({pct:.1f}%) — "
 "{files} .mo-filer — {outdated} utdaterade"
 
-#: src/langpack_inspector/window.py:222
+#: src/langpack_inspector/window.py:311
 #, python-brace-format
 msgid "{translated}/{total} ({pct:.0f}%)"
 msgstr "{translated}/{total} ({pct:.0f}%)"
 
-#: src/langpack_inspector/window.py:249
+#: src/langpack_inspector/window.py:338
 msgid "old"
 msgstr "gammal"
 
-#: src/langpack_inspector/window.py:257
+#: src/langpack_inspector/window.py:346
 msgid "Translate"
 msgstr "Översätt"
 
