@@ -47,19 +47,26 @@ On Ubuntu/Debian:
 sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 python3-gi-cairo
 ```
 
-## Translation
+## 🌍 Contributing Translations
 
-This project uses gettext for i18n. All user-visible strings are wrapped with `_()`.
+Help translate this app into your language! All translations are managed via Transifex.
 
-Translation is managed via [Transifex](https://app.transifex.com/danielnylander/langpack-inspector/).
+**→ [Translate on Transifex](https://app.transifex.com/danielnylander/langpack-inspector/)**
 
-To generate the POT file:
+### How to contribute:
+1. Visit the [Transifex project page](https://app.transifex.com/danielnylander/langpack-inspector/)
+2. Create a free account (or log in)
+3. Select your language and start translating
 
-```bash
-xgettext --language=Python --keyword=_ --output=po/langpack-inspector.pot \
-    src/langpack_inspector/*.py
-```
+### Currently supported languages:
+Arabic, Czech, Danish, German, Spanish, Finnish, French, Italian, Japanese, Korean, Norwegian Bokmål, Dutch, Polish, Brazilian Portuguese, Russian, Swedish, Ukrainian, Chinese (Simplified)
 
+### Notes:
+- Please do **not** submit pull requests with .po file changes — they are synced automatically from Transifex
+- Source strings are pushed to Transifex daily via GitHub Actions
+- Translations are pulled back and included in releases
+
+New language? Open an [issue](https://github.com/yeager/langpack-inspector/issues) and we'll add it!
 ## License
 
 GPL-3.0-or-later. See [LICENSE](LICENSE).
