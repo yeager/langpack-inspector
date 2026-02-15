@@ -84,6 +84,8 @@ class LangpackInspectorApp(Adw.Application):
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
         self.set_resource_base_path("/se/danielnylander/LangpackInspector")
+        if HAS_NOTIFY:
+            _Notify.init("langpack-inspector")
 
     def do_activate(self):
         win = self.props.active_window
@@ -109,6 +111,10 @@ class LangpackInspectorApp(Adw.Application):
         about_action.connect("activate", self._on_about)
         self.add_action(about_action)
 
+        notif_action = Gio.SimpleAction.new("toggle-notifications", None)
+        notif_action.connect("activate", lambda *_: _save_notify_config({"enabled": not _load_notify_config().get("enabled", False)}))
+        self.add_action(notif_action)
+
         quit_action = Gio.SimpleAction.new("quit", None)
         quit_action.connect("activate", lambda *_: self.quit())
         self.add_action(quit_action)
@@ -129,6 +135,8 @@ class LangpackInspectorApp(Adw.Application):
             comments=_("A localization tool by Daniel Nylander"),
             translator_credits=_("Translate this app: https://app.transifex.com/danielnylander/langpack-inspector/"),
         )
+        about.set_debug_info(_get_system_info())
+        about.set_debug_info_filename("langpack-inspector-debug.txt")
         about.present(self.props.active_window)
 
 
