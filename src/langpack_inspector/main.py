@@ -119,6 +119,10 @@ class LangpackInspectorApp(Adw.Application):
         quit_action.connect("activate", lambda *_: self.quit())
         self.add_action(quit_action)
         self.set_accels_for_action("app.quit", ["<Control>q"])
+        self.set_accels_for_action("app.export", ["<Control>e"])
+        export_action = Gio.SimpleAction.new("export", None)
+        export_action.connect("activate", lambda *_: self.props.active_window and self.props.active_window._on_export_clicked())
+        self.add_action(export_action)
 
     def _on_about(self, action, param):
         about = Adw.AboutDialog(

@@ -4,6 +4,8 @@
 
 """Main application window for Language Pack Inspector."""
 
+import csv
+import json
 import threading
 import gettext
 
@@ -13,7 +15,6 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, Gio, GLib, Pango, Gdk
 
 from langpack_inspector.backend import (
-from datetime import datetime as _dt_now
     get_system_language,
     list_installed_langpacks,
     scan_language,
@@ -92,6 +93,12 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
                                      tooltip_text="Toggle dark/light theme")
         self._theme_btn.connect("clicked", self._on_theme_toggle)
         header.pack_end(self._theme_btn)
+
+        # Export button
+        export_btn = Gtk.Button(icon_name="document-save-symbolic",
+                                tooltip_text=_("Export data"))
+        export_btn.connect("clicked", self._on_export_clicked)
+        header.pack_end(export_btn)
 
         # Refresh button
         refresh_btn = Gtk.Button(icon_name="view-refresh-symbolic")
@@ -201,6 +208,45 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         lang_bar.append(self._spinner)
 
     # ── Actions ──────────────────────────────────────────────────
+
+    def _on_export_clicked(self, *_args):
+        dialog = Adw.MessageDialog(transient_for=self,
+                                   heading=_("Export Data"),
+                                   body=_("Choose export format:"))
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("csv", "CSV")
+        dialog.add_response("json", "JSON")
+        dialog.set_response_appearance("csv", Adw.ResponseAppearance.SUGGESTED)
+        dialog.connect("response", self._on_export_format_chosen)
+        dialog.present()
+
+    def _on_export_format_chosen(self, dialog, response):
+        if response not in ("csv", "json"):
+            return
+        self._export_fmt = response
+        fd = Gtk.FileDialog()
+        fd.set_initial_name(f"langpack-export.{response}")
+        fd.save(self, None, self._on_export_save)
+
+    def _on_export_save(self, dialog, result):
+        try:
+            path = dialog.save_finish(result).get_path()
+        except Exception:
+            return
+        data = [{"domain": m.domain, "package": m.package,
+                 "translated": m.translated, "untranslated": m.untranslated,
+                 "total": m.total, "path": m.path}
+                for m in self._mo_files]
+        if not data:
+            return
+        if self._export_fmt == "csv":
+            with open(path, "w", newline="", encoding="utf-8") as f:
+                w = csv.DictWriter(f, fieldnames=data[0].keys())
+                w.writeheader()
+                w.writerows(data)
+        else:
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
 
     def _initial_scan(self):
         self._start_scan()
