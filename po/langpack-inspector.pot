@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: langpack-inspector 0.1.0\n"
+"Project-Id-Version: langpack-inspector\n"
 "Report-Msgid-Bugs-To: daniel@danielnylander.se\n"
-"POT-Creation-Date: 2026-02-14 09:48+0100\n"
+"POT-Creation-Date: 2026-02-14 20:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/langpack_inspector/main.py:58 src/langpack_inspector/window.py:31
+#: src/langpack_inspector/window.py:31 src/langpack_inspector/main.py:58
 msgid "Language Pack Inspector"
 msgstr ""
 
@@ -78,10 +78,12 @@ msgstr ""
 msgid "Translate"
 msgstr ""
 
-#: desktop file
-msgid "Inspect language pack contents and coverage"
+#: src/langpack_inspector/main.py:67
+msgid "A localization tool by Daniel Nylander"
 msgstr ""
 
-#: desktop file
-msgid "translation;l10n;langpack;inspector;"
+#: src/langpack_inspector/main.py:68
+msgid ""
+"Translate this app: https://app.transifex.com/danielnylander/langpack-"
+"inspector/"
 msgstr ""
