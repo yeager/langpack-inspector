@@ -14,7 +14,7 @@ gi.require_version("Adw", "1")
 # Optional desktop notifications
 try:
     gi.require_version("Notify", "0.7")
-    from gi.repository import Notify as _Notify
+    from gi.repository import Gtk, Notify as _Notify
     HAS_NOTIFY = True
 except (ValueError, ImportError):
     HAS_NOTIFY = False
@@ -95,6 +95,15 @@ class LangpackInspectorApp(Adw.Application):
         Adw.Application.do_startup(self)
         self._setup_actions()
 
+        self.set_accels_for_action("app.refresh", ["F5"])
+        self.set_accels_for_action("app.shortcuts", ["<Control>slash"])
+        refresh_action = Gio.SimpleAction.new("refresh", None)
+        refresh_action.connect("activate", lambda *_: self._do_refresh())
+        self.add_action(refresh_action)
+        shortcuts_action = Gio.SimpleAction.new("shortcuts", None)
+        shortcuts_action.connect("activate", self._show_shortcuts_window)
+        self.add_action(shortcuts_action)
+
     def _setup_actions(self):
         about_action = Gio.SimpleAction.new("about", None)
         about_action.connect("activate", self._on_about)
@@ -130,3 +139,20 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+    def _do_refresh(self):
+        w = self.get_active_window()
+        if w and hasattr(w, '_load_data'): w._load_data(force=True)
+        elif w and hasattr(w, '_on_refresh'): w._on_refresh(None)
+
+    def _show_shortcuts_window(self, *_args):
+        win = Gtk.ShortcutsWindow(transient_for=self.get_active_window(), modal=True)
+        section = Gtk.ShortcutsSection(visible=True, max_height=10)
+        group = Gtk.ShortcutsGroup(visible=True, title="General")
+        for accel, title in [("<Control>q", "Quit"), ("F5", "Refresh"), ("<Control>slash", "Keyboard shortcuts")]:
+            s = Gtk.ShortcutsShortcut(visible=True, accelerator=accel, title=title)
+            group.append(s)
+        section.append(group)
+        win.add_child(section)
+        win.present()
+

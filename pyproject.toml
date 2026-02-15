@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "langpack-inspector"
-version = "0.2.3"
+version = "0.2.4"
 description = "GTK4/Adwaita app to inspect Ubuntu language packs and find missing translations"
 readme = "README.md"
 license = "GPL-3.0-or-later"

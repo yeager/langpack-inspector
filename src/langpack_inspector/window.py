@@ -13,6 +13,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw, Gio, GLib, Pango, Gdk
 
 from langpack_inspector.backend import (
+from datetime import datetime as _dt_now
     get_system_language,
     list_installed_langpacks,
     scan_language,
@@ -86,6 +87,12 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         menu_btn.set_menu_model(menu)
         header.pack_end(menu_btn)
 
+        # Theme toggle
+        self._theme_btn = Gtk.Button(icon_name="weather-clear-night-symbolic",
+                                     tooltip_text="Toggle dark/light theme")
+        self._theme_btn.connect("clicked", self._on_theme_toggle)
+        header.pack_end(self._theme_btn)
+
         # Refresh button
         refresh_btn = Gtk.Button(icon_name="view-refresh-symbolic")
         refresh_btn.set_tooltip_text(_("Refresh"))
@@ -94,6 +101,12 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
 
         # Content
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+        # Status bar
+        self._status_bar = Gtk.Label(label="", halign=Gtk.Align.START,
+                                     margin_start=12, margin_end=12, margin_bottom=4)
+        self._status_bar.add_css_class("dim-label")
+        self._status_bar.add_css_class("caption")
+        content_box.append(self._status_bar)
         toolbar_view.set_content(content_box)
 
         # Language selector bar
@@ -194,6 +207,7 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
         return False
 
     def _on_refresh(self, *args):
+        self._update_status_bar()
         self._start_scan()
 
     def _on_lang_changed(self, *args):
@@ -348,3 +362,15 @@ class LangpackInspectorWindow(Adw.ApplicationWindow):
             row.add_suffix(link_btn)
 
         return row
+
+    def _on_theme_toggle(self, _btn):
+        sm = Adw.StyleManager.get_default()
+        if sm.get_color_scheme() == Adw.ColorScheme.FORCE_DARK:
+            sm.set_color_scheme(Adw.ColorScheme.FORCE_LIGHT)
+            self._theme_btn.set_icon_name("weather-clear-night-symbolic")
+        else:
+            sm.set_color_scheme(Adw.ColorScheme.FORCE_DARK)
+            self._theme_btn.set_icon_name("weather-clear-symbolic")
+
+    def _update_status_bar(self):
+        self._status_bar.set_text("Last updated: " + _dt_now.now().strftime("%Y-%m-%d %H:%M"))
