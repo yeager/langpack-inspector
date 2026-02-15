@@ -1,14 +1,14 @@
 # Language Pack Inspector
 
-A GTK4/Adwaita application for inspecting Ubuntu language packs and finding missing or outdated translations.
+A GTK4/Adwaita application for inspecting Ubuntu language pack coverage and .mo files.
 
-![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)
+![Screenshot](data/screenshots/screenshot-01.png)
 
 ## Features
 
 - List installed language packs (`language-pack-*`)
 - Show contents: which `.mo` files are included per package
-- Compare with available templates on Launchpad (via API)
+- Compare with available templates on Launchpad
 - Display translated/untranslated string counts per `.mo` file
 - Flag old/outdated translations (by date comparison)
 - Language chooser (defaults to system language)
@@ -17,14 +17,21 @@ A GTK4/Adwaita application for inspecting Ubuntu language packs and finding miss
 
 ## Installation
 
-### From .deb (Ubuntu/Debian)
+### Debian/Ubuntu
 
 ```bash
-# Add the repository
-curl -fsSL https://yeager.github.io/debian-repo/pubkey.gpg | sudo gpg --dearmor -o /usr/share/keyrings/yeager.gpg
-echo "deb [signed-by=/usr/share/keyrings/yeager.gpg] https://yeager.github.io/debian-repo stable main" | sudo tee /etc/apt/sources.list.d/yeager.list
+# Add repository
+curl -fsSL https://yeager.github.io/debian-repo/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/yeager-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/yeager-archive-keyring.gpg] https://yeager.github.io/debian-repo stable main" | sudo tee /etc/apt/sources.list.d/yeager.list
 sudo apt update
 sudo apt install langpack-inspector
+```
+
+### Fedora/RHEL
+
+```bash
+sudo dnf config-manager --add-repo https://yeager.github.io/rpm-repo/yeager.repo
+sudo dnf install langpack-inspector
 ```
 
 ### From source
@@ -32,19 +39,6 @@ sudo apt install langpack-inspector
 ```bash
 pip install .
 langpack-inspector
-```
-
-## Requirements
-
-- Python 3.10+
-- GTK 4
-- libadwaita 1
-- PyGObject
-
-On Ubuntu/Debian:
-
-```bash
-sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 python3-gi-cairo
 ```
 
 ## 🌍 Contributing Translations
@@ -67,10 +61,7 @@ Arabic, Czech, Danish, German, Spanish, Finnish, French, Italian, Japanese, Kore
 - Translations are pulled back and included in releases
 
 New language? Open an [issue](https://github.com/yeager/langpack-inspector/issues) and we'll add it!
+
 ## License
 
-GPL-3.0-or-later. See [LICENSE](LICENSE).
-
-## Author
-
-Daniel Nylander <daniel@danielnylander.se>
+GPL-3.0-or-later — Daniel Nylander <daniel@danielnylander.se>
