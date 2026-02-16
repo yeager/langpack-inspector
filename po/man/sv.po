@@ -25,7 +25,7 @@ msgstr ""
 #: data/man/langpack-inspector.1:1
 #, no-wrap
 msgid "LANGPACK-INSPECTOR"
-msgstr ""
+msgstr "LANGPACK-INSPECTOR"
 
 #. type: TH
 #: data/man/langpack-inspector.1:1
@@ -43,7 +43,7 @@ msgstr "Daniel Nylander"
 #: data/man/langpack-inspector.1:1
 #, no-wrap
 msgid "Language Pack Inspector Manual"
-msgstr ""
+msgstr "Manual för Language Pack Inspector"
 
 #. type: SH
 #: data/man/langpack-inspector.1:2
@@ -54,7 +54,7 @@ msgstr "NAMN"
 #. type: Plain text
 #: data/man/langpack-inspector.1:4
 msgid "langpack-inspector - Inspect Ubuntu language pack coverage"
-msgstr ""
+msgstr "langpack-inspector - Inspektera täckning för Ubuntu-språkpaket"
 
 #. type: SH
 #: data/man/langpack-inspector.1:4
@@ -65,7 +65,7 @@ msgstr "SYNOPSIS"
 #. type: Plain text
 #: data/man/langpack-inspector.1:6
 msgid "B<langpack-inspector>"
-msgstr ""
+msgstr "B<langpack-inspector>"
 
 #. type: SH
 #: data/man/langpack-inspector.1:6
@@ -82,6 +82,11 @@ msgid ""
 "templates, displays translated/untranslated string counts, flags outdated "
 "translations, and provides direct Launchpad links."
 msgstr ""
+"B<langpack-inspector> är ett GTK4/Adwaita-program för att kontrollera "
+"täckningen av Ubuntu-språkpaket och .mo-filer. Det listar installerade "
+"språkpaket, visar inkluderade .mo-filer per paket, jämför med tillgängliga "
+"Launchpad-mallar, visar antalet översatta/icke-översatta strängar, markerar "
+"föråldrade översättningar och tillhandahåller direkta Launchpad-länkar."
 
 #. type: SH
 #: data/man/langpack-inspector.1:8
@@ -93,12 +98,12 @@ msgstr "FLAGGOR"
 #: data/man/langpack-inspector.1:9
 #, no-wrap
 msgid "B<--help>"
-msgstr ""
+msgstr "B<--help>"
 
 #. type: Plain text
 #: data/man/langpack-inspector.1:12
 msgid "Show help message and exit."
-msgstr ""
+msgstr "Visa hjälpmeddelande och avsluta."
 
 #. type: SH
 #: data/man/langpack-inspector.1:12
@@ -110,7 +115,7 @@ msgstr "FILER"
 #: data/man/langpack-inspector.1:13
 #, no-wrap
 msgid "I<~/.config/langpack-inspector/>"
-msgstr ""
+msgstr "I<~/.config/langpack-inspector/>"
 
 #. type: Plain text
 #: data/man/langpack-inspector.1:16
@@ -121,7 +126,7 @@ msgstr "Konfigurationsfiler."
 #: data/man/langpack-inspector.1:16
 #, no-wrap
 msgid "I<~/.cache/langpack-inspector/>"
-msgstr ""
+msgstr "I<~/.cache/langpack-inspector/>"
 
 #. type: Plain text
 #: data/man/langpack-inspector.1:19
@@ -138,6 +143,7 @@ msgstr "BUGGAR"
 #: data/man/langpack-inspector.1:21
 msgid "Report bugs at https://github.com/yeager/langpack-inspector/issues"
 msgstr ""
+"Rapportera buggar på https://github.com/yeager/langpack-inspector/issues"
 
 #. type: SH
 #: data/man/langpack-inspector.1:21
@@ -159,4 +165,4 @@ msgstr "SE ÄVEN"
 #. type: Plain text
 #: data/man/langpack-inspector.1:24
 msgid "Project homepage: https://github.com/yeager/langpack-inspector"
-msgstr ""
+msgstr "Projektets webbsida: https://github.com/yeager/langpack-inspector"
