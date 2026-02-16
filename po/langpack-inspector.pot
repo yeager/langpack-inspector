@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Daniel Nylander
-# This file is distributed under the same license as the langpack-inspector package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: langpack-inspector\n"
-"Report-Msgid-Bugs-To: daniel@danielnylander.se\n"
-"POT-Creation-Date: 2026-02-15 10:24+0100\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-16 17:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,85 +17,93 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/langpack_inspector/window.py:53 src/langpack_inspector/main.py:58
+#: src/langpack_inspector/window.py:55 src/langpack_inspector/main.py:129
 msgid "Language Pack Inspector"
 msgstr ""
 
-#: src/langpack_inspector/window.py:77
+#: src/langpack_inspector/window.py:79
 msgid "Toggle heatmap view"
 msgstr ""
 
-#: src/langpack_inspector/window.py:84
+#: src/langpack_inspector/window.py:86
 msgid "About"
 msgstr ""
 
-#: src/langpack_inspector/window.py:85
+#: src/langpack_inspector/window.py:87
 msgid "Quit"
 msgstr ""
 
-#: src/langpack_inspector/window.py:91
+#: src/langpack_inspector/window.py:99
+msgid "Export data"
+msgstr ""
+
+#: src/langpack_inspector/window.py:105
 msgid "Refresh"
 msgstr ""
 
-#: src/langpack_inspector/window.py:107
+#: src/langpack_inspector/window.py:127
 msgid "Language:"
 msgstr ""
 
-#: src/langpack_inspector/window.py:117
+#: src/langpack_inspector/window.py:137
 msgid "Scan"
 msgstr ""
 
-#: src/langpack_inspector/window.py:131
+#: src/langpack_inspector/window.py:151
 msgid "Installed Language Packs"
 msgstr ""
 
-#: src/langpack_inspector/window.py:178
+#: src/langpack_inspector/window.py:198
 msgid "Filter domains…"
 msgstr ""
 
-#: src/langpack_inspector/window.py:222
+#: src/langpack_inspector/window.py:214
+msgid "Export Data"
+msgstr ""
+
+#: src/langpack_inspector/window.py:215
+msgid "Choose export format:"
+msgstr ""
+
+#: src/langpack_inspector/window.py:216
+msgid "Cancel"
+msgstr ""
+
+#: src/langpack_inspector/window.py:282
 msgid "Scanning…"
 msgstr ""
 
-#: src/langpack_inspector/window.py:243
+#: src/langpack_inspector/window.py:303
 #, python-format
 msgid "No language packs found for '%s'"
 msgstr ""
 
-#: src/langpack_inspector/window.py:248
+#: src/langpack_inspector/window.py:308
 #, python-brace-format
 msgid ""
 "Language: {lang} — {translated}/{total} strings translated ({pct:.1f}%) — "
 "{files} .mo files — {outdated} outdated"
 msgstr ""
 
-#: src/langpack_inspector/window.py:311
+#: src/langpack_inspector/window.py:371
 #, python-brace-format
 msgid "{translated}/{total} ({pct:.0f}%)"
 msgstr ""
 
-#: src/langpack_inspector/window.py:338
+#: src/langpack_inspector/window.py:398
 msgid "old"
 msgstr ""
 
-#: src/langpack_inspector/window.py:346
+#: src/langpack_inspector/window.py:406
 msgid "Translate"
 msgstr ""
 
-#: src/langpack_inspector/main.py:67
+#: src/langpack_inspector/main.py:139
 msgid "A localization tool by Daniel Nylander"
 msgstr ""
 
-#: src/langpack_inspector/main.py:68
+#: src/langpack_inspector/main.py:140
 msgid ""
 "Translate this app: https://app.transifex.com/danielnylander/langpack-"
 "inspector/"
-msgstr ""
-
-#: langpack-inspector/data/se.danielnylander.langpack-inspector.desktop.in
-msgid "Inspect language pack contents and coverage"
-msgstr ""
-
-#: langpack-inspector/data/se.danielnylander.langpack-inspector.desktop.in
-msgid "translation;l10n;langpack;inspector;"
 msgstr ""
