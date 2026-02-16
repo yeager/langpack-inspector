@@ -91,3 +91,11 @@ msgid ""
 "Translate this app: https://app.transifex.com/danielnylander/langpack-"
 "inspector/"
 msgstr ""
+
+#: langpack-inspector/data/se.danielnylander.langpack-inspector.desktop.in
+msgid "Inspect language pack contents and coverage"
+msgstr ""
+
+#: langpack-inspector/data/se.danielnylander.langpack-inspector.desktop.in
+msgid "translation;l10n;langpack;inspector;"
+msgstr ""

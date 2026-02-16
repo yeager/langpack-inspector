@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Language Pack Inspector
+Name[sv]=Inspektera språkpaket
 Comment=Inspect language pack contents and coverage
 Exec=langpack-inspector
 Icon=langpack-inspector
