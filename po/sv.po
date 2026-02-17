@@ -39,7 +39,7 @@ msgstr "Avsluta"
 
 #: src/langpack_inspector/window.py:99
 msgid "Export data"
-msgstr ""
+msgstr "Exportera data"
 
 #: src/langpack_inspector/window.py:105
 msgid "Refresh"
@@ -63,15 +63,15 @@ msgstr "Filtrera domäner…"
 
 #: src/langpack_inspector/window.py:214
 msgid "Export Data"
-msgstr ""
+msgstr "Exportera data"
 
 #: src/langpack_inspector/window.py:215
 msgid "Choose export format:"
-msgstr ""
+msgstr "Välj exportformat:"
 
 #: src/langpack_inspector/window.py:216
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: src/langpack_inspector/window.py:282
 msgid "Scanning…"
