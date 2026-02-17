@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![Ubuntu L10n](screenshots/main.png)
+![Langpack Inspector](screenshots/main.png)
 
 A GTK4/Adwaita application for inspecting Ubuntu language pack coverage and .mo files.
 
