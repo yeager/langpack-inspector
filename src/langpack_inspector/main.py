@@ -144,13 +144,6 @@ class LangpackInspectorApp(Adw.Application):
         about.present(self.props.active_window)
 
 
-def main():
-    app = LangpackInspectorApp()
-    return app.run(sys.argv)
-
-
-if __name__ == "__main__":
-    sys.exit(main())
 
     def _do_refresh(self):
         w = self.get_active_window()
@@ -167,4 +160,14 @@ if __name__ == "__main__":
         section.append(group)
         win.add_child(section)
         win.present()
+
+
+
+def main():
+    app = LangpackInspectorApp()
+    return app.run(sys.argv)
+
+
+if __name__ == "__main__":
+    sys.exit(main())
 
