@@ -137,7 +137,7 @@ class LangpackInspectorApp(Adw.Application):
             issue_url="https://github.com/yeager/langpack-inspector/issues",
             translate_url="https://app.transifex.com/danielnylander/langpack-inspector/",
             comments=_("A localization tool by Daniel Nylander"),
-            translator_credits=_("Translate this app: https://app.transifex.com/danielnylander/langpack-inspector/"),
+            translator_credits=_("Translate this app: https://www.transifex.com/danielnylander/langpack-inspector/"),
         )
         about.set_debug_info(_get_system_info())
         about.set_debug_info_filename("langpack-inspector-debug.txt")
