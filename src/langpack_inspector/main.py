@@ -29,8 +29,6 @@ gettext.bindtextdomain("langpack-inspector", LOCALE_DIR)
 gettext.textdomain("langpack-inspector")
 _ = gettext.gettext
 
-
-
 import json as _json
 import platform as _platform
 from pathlib import Path as _Path
@@ -38,10 +36,8 @@ from langpack_inspector.accessibility import AccessibilityManager
 
 _NOTIFY_APP = "langpack-inspector"
 
-
 def _notify_config_path():
     return _Path(GLib.get_user_config_dir()) / _NOTIFY_APP / "notifications.json"
-
 
 def _load_notify_config():
     try:
@@ -49,12 +45,10 @@ def _load_notify_config():
     except Exception:
         return {"enabled": False}
 
-
 def _save_notify_config(config):
     p = _notify_config_path()
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(_json.dumps(config))
-
 
 def _send_notification(summary, body="", icon="dialog-information"):
     if HAS_NOTIFY and _load_notify_config().get("enabled"):
@@ -63,7 +57,6 @@ def _send_notification(summary, body="", icon="dialog-information"):
             n.show()
         except Exception:
             pass
-
 
 def _get_system_info():
     return "\n".join([
@@ -74,8 +67,6 @@ def _get_system_info():
         f"Python: {_platform.python_version()}",
         f"OS: {_platform.system()} {_platform.release()} ({_platform.machine()})",
     ])
-
-
 
 def _settings_path():
     import os
@@ -117,7 +108,6 @@ class LangpackInspectorApp(Adw.Application):
         win.present()
         if not self.settings.get("welcome_shown"):
             self._show_welcome(self if hasattr(self, "set_content") else win)
-
 
     def do_startup(self):
         Adw.Application.do_startup(self)
@@ -161,15 +151,14 @@ class LangpackInspectorApp(Adw.Application):
             license_type=Gtk.License.GPL_3_0,
             website="https://github.com/yeager/langpack-inspector",
             issue_url="https://github.com/yeager/langpack-inspector/issues",
-            translate_url="https://app.transifex.com/danielnylander/langpack-inspector/",
             comments=_("A localization tool by Daniel Nylander"),
             translator_credits=_("Translate this app: https://www.transifex.com/danielnylander/langpack-inspector/"),
         )
         about.set_debug_info(_get_system_info())
         about.set_debug_info_filename("langpack-inspector-debug.txt")
+        about.add_link(_("Help translate"), "https://app.transifex.com/danielnylander/langpack-inspector/")
+
         about.present(self.props.active_window)
-
-
 
     def _do_refresh(self):
         w = self.get_active_window()
@@ -187,12 +176,9 @@ class LangpackInspectorApp(Adw.Application):
         win.add_child(section)
         win.present()
 
-
-
 def main():
     app = LangpackInspectorApp()
     return app.run(sys.argv)
-
 
 if __name__ == "__main__":
     sys.exit(main())
@@ -233,8 +219,6 @@ if __name__ == "__main__":
         _save_settings(self.settings)
         dialog.close()
 
-
-
 # --- Session restore ---
 import json as _json
 import os as _os
@@ -261,7 +245,6 @@ def _restore_session(window, app_name):
     except (FileNotFoundError, _json.JSONDecodeError, OSError):
         pass
 
-
 # --- Fullscreen toggle (F11) ---
 def _setup_fullscreen(window, app):
     """Add F11 fullscreen toggle."""
@@ -273,7 +256,6 @@ def _setup_fullscreen(window, app):
         ))
         app.add_action(action)
         app.set_accels_for_action('app.toggle-fullscreen', ['F11'])
-
 
 # --- Plugin system ---
 import importlib.util
