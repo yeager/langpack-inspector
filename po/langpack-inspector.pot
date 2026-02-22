@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-16 17:15+0100\n"
+"POT-Creation-Date: 2026-02-22 06:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/langpack_inspector/window.py:55 src/langpack_inspector/main.py:129
+#: src/langpack_inspector/window.py:55 src/langpack_inspector/main.py:154
 msgid "Language Pack Inspector"
 msgstr ""
 
@@ -98,12 +98,34 @@ msgstr ""
 msgid "Translate"
 msgstr ""
 
-#: src/langpack_inspector/main.py:139
+#: src/langpack_inspector/main.py:164
 msgid "A localization tool by Daniel Nylander"
 msgstr ""
 
-#: src/langpack_inspector/main.py:140
+#: src/langpack_inspector/main.py:165
 msgid ""
-"Translate this app: https://app.transifex.com/danielnylander/langpack-"
+"Translate this app: https://www.transifex.com/danielnylander/langpack-"
 "inspector/"
+msgstr ""
+
+#: src/langpack_inspector/main.py:203
+msgid "Welcome"
+msgstr ""
+
+#: src/langpack_inspector/main.py:209
+msgid "Welcome to Language Pack Inspector"
+msgstr ""
+
+#: src/langpack_inspector/main.py:211
+msgid ""
+"Inspect and analyze language packs.\n"
+"\n"
+"✓ Browse installed language packs\n"
+"✓ Check translation coverage\n"
+"✓ Find missing translations\n"
+"✓ Compare language packs"
+msgstr ""
+
+#: src/langpack_inspector/main.py:214
+msgid "Get Started"
 msgstr ""

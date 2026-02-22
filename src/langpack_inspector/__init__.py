@@ -1,4 +1,4 @@
 """Language Pack Inspector - GTK4/Adwaita app for inspecting Ubuntu language packs."""
 
-__version__ = "0.2.6"
+__version__ = "0.2.7"
 __app_id__ = "se.danielnylander.LangpackInspector"
