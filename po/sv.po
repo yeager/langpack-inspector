@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-16 17:15+0100\n"
+"POT-Creation-Date: 2026-02-22 06:25+0100\n"
 "PO-Revision-Date: 2026-02-14 09:50+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304766/sv/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/langpack_inspector/window.py:55 src/langpack_inspector/main.py:129
+#: src/langpack_inspector/window.py:55 src/langpack_inspector/main.py:154
 msgid "Language Pack Inspector"
 msgstr "Inspektera språkpaket"
 
@@ -104,14 +104,42 @@ msgstr "gammal"
 msgid "Translate"
 msgstr "Översätt"
 
-#: src/langpack_inspector/main.py:139
+#: src/langpack_inspector/main.py:164
 msgid "A localization tool by Daniel Nylander"
 msgstr "Ett lokalanpassningsverktyg av Daniel Nylander"
 
-#: src/langpack_inspector/main.py:140
+#: src/langpack_inspector/main.py:165
 msgid ""
-"Translate this app: https://app.transifex.com/danielnylander/langpack-"
+"Translate this app: https://www.transifex.com/danielnylander/langpack-"
 "inspector/"
 msgstr ""
-"Översätt denna app: https://app.transifex.com/danielnylander/langpack-"
+"Översätt denna app: https://www.transifex.com/danielnylander/langpack-"
 "inspector/"
+
+#: src/langpack_inspector/main.py:203
+msgid "Welcome"
+msgstr "Välkommen"
+
+#: src/langpack_inspector/main.py:209
+msgid "Welcome to Language Pack Inspector"
+msgstr "Välkommen till Språkpaketsinspekteraren"
+
+#: src/langpack_inspector/main.py:211
+msgid ""
+"Inspect and analyze language packs.\n"
+"\n"
+"✓ Browse installed language packs\n"
+"✓ Check translation coverage\n"
+"✓ Find missing translations\n"
+"✓ Compare language packs"
+msgstr ""
+"Inspektera och analysera språkpaket.\n"
+"\n"
+"✓ Bläddra bland installerade språkpaket\n"
+"✓ Kontrollera översättningstäckning\n"
+"✓ Hitta saknade översättningar\n"
+"✓ Jämför språkpaket"
+
+#: src/langpack_inspector/main.py:214
+msgid "Get Started"
+msgstr "Kom igång"
