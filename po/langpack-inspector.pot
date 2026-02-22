@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the langpack-inspector package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: langpack-inspector\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-22 06:25+0100\n"
+"POT-Creation-Date: 2026-02-22 17:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/langpack_inspector/window.py:55 src/langpack_inspector/main.py:154
+#: src/langpack_inspector/main.py:155 src/langpack_inspector/window.py:55
 msgid "Language Pack Inspector"
+msgstr ""
+
+#: src/langpack_inspector/main.py:165
+msgid "A localization tool by Daniel Nylander"
+msgstr ""
+
+#: src/langpack_inspector/main.py:166
+msgid ""
+"Translate this app: https://www.transifex.com/danielnylander/langpack-"
+"inspector/"
+msgstr ""
+
+#: src/langpack_inspector/main.py:204
+msgid "Welcome"
+msgstr ""
+
+#: src/langpack_inspector/main.py:210
+msgid "Welcome to Language Pack Inspector"
+msgstr ""
+
+#: src/langpack_inspector/main.py:212
+msgid ""
+"Inspect and analyze language packs.\n"
+"\n"
+"✓ Browse installed language packs\n"
+"✓ Check translation coverage\n"
+"✓ Find missing translations\n"
+"✓ Compare language packs"
+msgstr ""
+
+#: src/langpack_inspector/main.py:215
+msgid "Get Started"
 msgstr ""
 
 #: src/langpack_inspector/window.py:79
@@ -96,36 +128,4 @@ msgstr ""
 
 #: src/langpack_inspector/window.py:406
 msgid "Translate"
-msgstr ""
-
-#: src/langpack_inspector/main.py:164
-msgid "A localization tool by Daniel Nylander"
-msgstr ""
-
-#: src/langpack_inspector/main.py:165
-msgid ""
-"Translate this app: https://www.transifex.com/danielnylander/langpack-"
-"inspector/"
-msgstr ""
-
-#: src/langpack_inspector/main.py:203
-msgid "Welcome"
-msgstr ""
-
-#: src/langpack_inspector/main.py:209
-msgid "Welcome to Language Pack Inspector"
-msgstr ""
-
-#: src/langpack_inspector/main.py:211
-msgid ""
-"Inspect and analyze language packs.\n"
-"\n"
-"✓ Browse installed language packs\n"
-"✓ Check translation coverage\n"
-"✓ Find missing translations\n"
-"✓ Compare language packs"
-msgstr ""
-
-#: src/langpack_inspector/main.py:214
-msgid "Get Started"
 msgstr ""
