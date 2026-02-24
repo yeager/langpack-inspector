@@ -94,6 +94,7 @@ class LangpackInspectorApp(Adw.Application):
     def __init__(self):
         super().__init__(
             application_id=__app_id__,
+        GLib.set_application_name(_("Language Pack Inspector"))
             flags=Gio.ApplicationFlags.DEFAULT_FLAGS,
         )
         self.set_resource_base_path("/se/danielnylander/LangpackInspector")
