@@ -8,3 +8,4 @@ Terminal=false
 Type=Application
 Categories=Development;Translation;
 Keywords=translation;l10n;langpack;inspector;
+StartupWMClass=se.danielnylander.langpack-inspector
