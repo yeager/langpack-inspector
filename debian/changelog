@@ -1,5 +1,5 @@
-langpack-inspector (0.1.0-1) stable; urgency=low
+langpack-inspector (0.2.9-0ppa1) noble; urgency=low
 
-  * Initial release.
+  * Initial PPA release.
 
- -- Daniel Nylander <daniel@danielnylander.se>  Fri, 14 Feb 2025 09:00:00 +0100
+ -- Daniel Nylander <daniel@danielnylander.se>  Sun, 01 Mar 2026 19:00:31 +0100
